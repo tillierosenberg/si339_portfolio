@@ -44,13 +44,11 @@ nav ul{
     flex-direction: column;
     background-color: rgb(235, 233, 215);
 	padding:10px;
-  z-index: 1;
 }
 
 nav li{
     width: 40%;
     text-align: center;
-    align-self: center;
     background-color:papayawhip;
     margin: 10px;
     border: 1px tan solid;
