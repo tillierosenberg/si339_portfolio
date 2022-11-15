@@ -1,19 +1,22 @@
 /* general styling for mobile view */
 
 body {
-    font-family: 'Merriweather', serif;
-    background: linear-gradient(to right, rgba(240, 211, 169, 0.815) 0%, rgb(235, 233, 215) 100%);
-
+    font-family: 'Abhaya Libre', serif;
+    background: rgba(240, 211, 169, 0.815);
+  
 }
 
 footer{
   background-color:  rgba(56, 54, 54, 0.295);
-  color: #ffffff;
+  color: #242222;
   padding: 10px;
   text-align: center;
   bottom: 0;
   left:0;
   right:0;
+  -webkit-text-stroke-width: 0.25px;
+  -webkit-text-stroke-color:#000000;
+
 }
 
 p {
@@ -27,7 +30,7 @@ a{
 .active{
 	background: rgba(240, 211, 169, 0.815);
     border: black 2px dotted;
-    font-size: 23px;
+    font-size: 25px;
     color:#49494b;
     text-shadow: 2px 2px 5px rgb(226, 223, 192);
 }
@@ -41,6 +44,7 @@ nav ul{
     flex-direction: column;
     background-color: rgb(235, 233, 215);
 	padding:10px;
+  z-index: 1;
 }
 
 nav li{
@@ -100,6 +104,10 @@ nav li{
     height: 75%;
   }
 
+
+  .gallery img:hover, .gallery img:focus {
+    border:rgb(136, 122, 61) 5px dashed;
+  }
     
   .gallery img:nth-child(odd) {
     grid-column-start: 1;
@@ -109,8 +117,22 @@ nav li{
 }
 
 .gallery img:last-child{
-  grid-column: 1 / -1;
+  grid-column-start: 1;
+  grid-column-end: -1;
   justify-self: center;
+}
+
+#headshot
+{position: relative;
+width: 300px;
+height: 300px;
+background: white;
+border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
+color: white;
+box-shadow: 20px 20px rgba(0,0,0,.15);
+transition: all .4s ease;
+display: inline-block;
+margin-top: 10px;
 }
   
   .about_me img{
@@ -128,17 +150,21 @@ nav li{
     border-left: yellow 5px solid;
     width: 200px;
   }
+  .about_me{
+    font-size: 25px;
+    text-align: center;
+
+  }
 
 
   #headshot {
     display: block;
-    width: 300px;
     margin-right: auto; 
     margin-left: auto;
     border:rgba(46, 29, 5, 0.815) 3px solid;
 
   }
-  h2 {
+  h1 {
     color: #49494b;
     font-size: 40px;
     margin: 10px;
@@ -147,11 +173,11 @@ nav li{
   }
 
   #bio{
+    padding-top: 20px;
     color:rgb(97, 86, 38);
     font-size: 30px;
     font-weight: bold;
     text-decoration: underline;
-    padding-bottom: 50px;
   }
 
   @keyframes mymove{
@@ -171,11 +197,17 @@ nav li{
     }
     to{
       opacity: 1;
-      width: 400px;
-      height: 400px;
+      width: 300px;
+      height: 300px;
   }
 }
   
+@keyframes spin { 
+  100% { 
+      -webkit-transform: rotate(360deg); 
+      transform:rotate(360deg); 
+  } 
+}
 
   #name{
     animation: mymove 5s;
@@ -196,7 +228,7 @@ nav li{
        flex-direction: column;
        justify-content: center;
        align-content: center;
-       flex-wrap: wrap;
+
      }
      #flex_container img{
       width: 200px;
@@ -204,9 +236,7 @@ nav li{
      }
 
   #flex_container img:hover,   #flex_container img:focus{
-    width: 300px;
     border:rgb(51, 44, 12) 7px solid;
-    justify-self: center;
   }
 
 /* hide the pdf presentation of the resume on mobile view */
@@ -216,7 +246,7 @@ nav li{
 
   .resume, .github{
     font-size: 25px;
-    text-align: center; 
+    text-align:center; 
   }
 
     /* first media query for tablet view */
@@ -238,28 +268,34 @@ nav li{
           border: 1px tan solid;
           width: 25%; 
       }
+
+
       .gallery {
-
-        grid-template-columns: 1fr 1fr 1fr;}
+        grid-template-columns: 1fr;
+        /* background-image: url("../images/map.jpeg"); */
       
-     .gallery img {
-       align-self: center;
-       justify-content: center;
-       width: 95%;
-     }
-   
-      
-      .gallery img:nth-of-type(3n){
-        grid-column-start: 3;
-
+  
       }
-      .gallery img:nth-of-type(3n + 1){
-        grid-column-start: 1;
-
+  
+  
+      .gallery img:nth-of-type(n){
+        grid-column: 1/-1;
+        width: 50%;
+        justify-self:left;
+        background-color: burlywood;
+        max-width: 500px;
+        max-height: 500px;
+        border:rgba(30, 28, 41, 0.897) 5px solid;
+        border-radius: 50% 50% 50% 50%;
+        animation: spin 4s;
+        box-shadow: 0 0 5px 2px #282a2d;
+  
+  
       }
-      .gallery img:nth-of-type(3n + 2){
-        grid-column-start: 2;
-
+      .gallery img:nth-of-type(2n){
+  
+        width: 50%;
+        justify-self:right;
       }
       iframe{
       display: block;
@@ -276,9 +312,7 @@ nav li{
       #flex_container img{
         flex-basis: 100px;
       }
-      #headshot { 
-        width: 300px;
-        height: 300px;
+      #headshot {
         animation: mymove2 5s;
 
       }
@@ -287,37 +321,39 @@ nav li{
     /* second media query for desktop view */
     @media screen and (min-width: 900px){
       nav ul {
-        position: fixed;
+        position: sticky;
         width: 100%;
       }
-      main {
-        padding-top: 50px;
+  
+      .gallery {
+
+        grid-template-columns: 1fr 1fr 1fr;}
+      
+     .gallery img:nth-of-type(n) {
+       align-self: center;
+       justify-self: center;
+       width: 95%;
+       border-radius: 0px 0px 0px 0px;
     
+
+     }
+   
+      
+      .gallery img:nth-of-type(3n){
+        grid-column-start: 3;
+        grid-column-end: 4;
+
       }
-  
-    .gallery {
-      grid-template-columns: 1fr;
-      grid-gap: 0px;
-      background-image: url("../images/map.jpeg")
+      .gallery img:nth-of-type(3n + 1){
+        grid-column-start: 1;
+        grid-column-end: 2;
 
-    }
-  
+      }
+      .gallery img:nth-of-type(3n + 2){
+        grid-column-start: 2;
+        grid-column-end: 3;
 
-    .gallery img:nth-of-type(n){
-      grid-column: 1 / -1 ;
-      width: 50%;
-      justify-self:left;
-      background-color: burlywood;
-      max-width: 500px;
-      max-height: 500px;
-      border:rgba(30, 28, 41, 0.897) 5px solid;
-
-    }
-    .gallery img:nth-of-type(2n){
-      grid-column: 1 / -1 ;
-      width: 50%;
-      justify-self:right;
-    }
+      }
 
     #flex_container{
       flex-direction: row;
@@ -325,19 +361,17 @@ nav li{
       gap: 50px;
     }
     #flex_container img{
-      width: 130px;
+      /* width: 130px; */
       border:rgb(97, 86, 38) 3px solid; 
      }
      .about_me img {
       display: inline;
 
     }
-    #headshot{
-      margin-top: 10px;  
-    }
+   
   }
 @media prefers-reduced-motion{
-    #name, #headshot{
+    *{
       animation: none
   }
 }
