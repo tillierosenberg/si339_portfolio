@@ -229,10 +229,12 @@ margin-top: 10px;
        justify-content: center;
        align-content: center;
 
+
      }
      #flex_container img{
       width: 200px;
       border:rgb(97, 86, 38) 3px solid; 
+      align-self: center;
      }
 
   #flex_container img:hover,   #flex_container img:focus{
