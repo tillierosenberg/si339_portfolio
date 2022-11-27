@@ -43,8 +43,7 @@ nav ul{
     display: flex;
     flex-direction: column;
     background-color: rgb(235, 233, 215);
-    justify-self: center;
-	padding:10px;
+	  padding:10px;
 }
 
 nav li{
@@ -133,6 +132,10 @@ box-shadow: 20px 20px rgba(0,0,0,.15);
 transition: all .4s ease;
 display: inline-block;
 margin-top: 10px;
+display: block;
+margin-right: auto; 
+margin-left: auto;
+border:rgba(46, 29, 5, 0.815) 3px solid;
 }
   
   .about_me img{
@@ -157,13 +160,8 @@ margin-top: 10px;
   }
 
 
-  #headshot {
-    display: block;
-    margin-right: auto; 
-    margin-left: auto;
-    border:rgba(46, 29, 5, 0.815) 3px solid;
 
-  }
+
   h1 {
     color: #49494b;
     font-size: 40px;
@@ -219,7 +217,7 @@ margin-top: 10px;
   
 
      #sources{
-       font-size: 7px;
+       font-size: 12px;
 
      }
 
@@ -255,27 +253,15 @@ margin-top: 10px;
 
      @media screen and (min-width: 700px){
       nav ul{
-          display: flex;
           flex-direction: row;
-          background-color: rgb(235, 233, 215);
         
       }
 
   
-      nav li{
-          text-align: center;
-          align-self: center;
-          background-color:papayawhip;
-          margin: 10px;
-          border: 1px tan solid;
-          width: 25%; 
-      }
 
 
       .gallery {
-        grid-template-columns: 1fr;
-        /* background-image: url("../images/map.jpeg"); */
-      
+        grid-template-columns: 1fr;      
   
       }
   
@@ -363,7 +349,6 @@ margin-top: 10px;
       gap: 50px;
     }
     #flex_container img{
-      /* width: 130px; */
       border:rgb(97, 86, 38) 3px solid; 
      }
      .about_me img {
