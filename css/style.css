@@ -3,7 +3,6 @@
 body {
     font-family: 'Abhaya Libre', serif;
     background: rgba(240, 211, 169, 0.815);
-  
 }
 
 footer{
@@ -165,7 +164,6 @@ border:rgba(46, 29, 5, 0.815) 3px solid;
   h1 {
     color: #49494b;
     font-size: 40px;
-    margin: 10px;
     margin: auto;
     text-align: center;
   }
@@ -239,6 +237,7 @@ border:rgba(46, 29, 5, 0.815) 3px solid;
     border:rgb(51, 44, 12) 7px solid;
   }
 
+ 
 /* hide the pdf presentation of the resume on mobile view */
   iframe{
    display: none
@@ -250,8 +249,7 @@ border:rgba(46, 29, 5, 0.815) 3px solid;
   }
 
     /* first media query for tablet view */
-
-     @media screen and (min-width: 700px){
+@media screen and (min-width: 700px){
       nav ul{
           flex-direction: row;
         
@@ -268,21 +266,17 @@ border:rgba(46, 29, 5, 0.815) 3px solid;
   
       .gallery img:nth-of-type(n){
         grid-column: 1/-1;
-        width: 50%;
+        /* width: 75%; */
         justify-self:left;
         background-color: burlywood;
-        max-width: 500px;
         max-height: 500px;
         border:rgba(30, 28, 41, 0.897) 5px solid;
-        border-radius: 50% 50% 50% 50%;
         animation: spin 4s;
         box-shadow: 0 0 5px 2px #282a2d;
   
   
       }
       .gallery img:nth-of-type(2n){
-  
-        width: 50%;
         justify-self:right;
       }
       iframe{
@@ -320,8 +314,7 @@ border:rgba(46, 29, 5, 0.815) 3px solid;
      .gallery img:nth-of-type(n) {
        align-self: center;
        justify-self: center;
-       width: 95%;
-       border-radius: 0px 0px 0px 0px;
+       /* width: 95%; */
     
 
      }
