@@ -247,13 +247,7 @@ border:rgba(46, 29, 5, 0.815) 3px solid;
       height: 300px;
   }
 }
-  
-@keyframes spin { 
-  100% { 
-      -webkit-transform: rotate(360deg); 
-      transform:rotate(360deg); 
-  } 
-}
+
 
   #name{
     animation: mymove 5s;
@@ -321,7 +315,6 @@ border:rgba(46, 29, 5, 0.815) 3px solid;
         background-color: burlywood;
         max-height: 500px;
         border:rgba(30, 28, 41, 0.897) 5px solid;
-        animation: spin 4s;
         box-shadow: 0 0 5px 2px #282a2d;
   
   
@@ -400,8 +393,8 @@ border:rgba(46, 29, 5, 0.815) 3px solid;
     }
    
   }
-@media prefers-reduced-motion{
-    *{
+@media  (prefers-reduced-motion: reduce){
+    #name, #headshot{
       animation: none
   }
 }
