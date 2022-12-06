@@ -41,6 +41,7 @@ a{
 nav ul{
     display: flex;
     flex-direction: column;
+  
     background-color: rgb(235, 233, 215);
 	  padding:10px;
 }
@@ -296,7 +297,6 @@ border:rgba(46, 29, 5, 0.815) 3px solid;
 @media screen and (min-width: 700px){
       nav ul{
           flex-direction: row;
-        
       }
 
   
@@ -346,8 +346,8 @@ border:rgba(46, 29, 5, 0.815) 3px solid;
     /* second media query for desktop view */
     @media screen and (min-width: 900px){
       nav ul {
-        position: sticky;
         width: 100%;
+        justify-content: space-between;
       }
   
       .gallery {
